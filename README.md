@@ -3,6 +3,8 @@
 
 A simple Task manager built with Vuetify and Vue.js. 
 
+Link: https://serene-anchorage-93343.herokuapp.com
+
 Admin username: splinter@tmnt.com
 
 Default usernames: raphaelo@tmnt.com and raphaelo@tmnt.com
