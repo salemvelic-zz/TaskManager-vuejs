@@ -63,7 +63,6 @@ export default {
   },
   computed: {
     listUsers () {
-      console.log('In list')
       return this.$store.getters.users
     }
   },
