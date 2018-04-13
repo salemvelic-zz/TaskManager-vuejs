@@ -1,7 +1,11 @@
-<<<<<<< HEAD
+
 # task-manager
 
-> A simple task manager
+A simple Task manager built with Vuetify and Vue.js. 
+
+Admin username: splinter@tmnt.com
+
+Default usernames: raphaelo@tmnt.com and raphaelo@tmnt.com
 
 ## Build Setup
 
@@ -21,6 +25,5 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 =======
-# vuejs-task-manager
-A simple Task manager built with Vuetify and Vue.js
->>>>>>> 5808a7b43328814958b2f7e69f1293a64cd41585
+
+
