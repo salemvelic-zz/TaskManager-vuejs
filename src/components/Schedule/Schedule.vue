@@ -1,7 +1,7 @@
 <template>
   <v-container>  
     <v-layout>
-      <v-flex xs12 clas="text-xs-center">
+      <v-flex xs12 class="text-xs-center">
         <v-progress-circular 
           indeterminate 
           color="primary"
