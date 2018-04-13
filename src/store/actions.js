@@ -227,6 +227,7 @@ export default {
     .catch(error => console.log(error))
   },
   getSchedule ({commit}) {
+    commit('setLoading', true)
     axios.get('/schedule.json')
     .then(res => {
       const data = res.data
@@ -242,9 +243,11 @@ export default {
           .then(axios.spread((task, user) => {
             const newSchedule = {id: key, user: user.data, task: task.data}
             schedules.push(newSchedule)
+            commit('setLoading', false)
           }))
           .catch(error => {
             console.log(error)
+            commit('setLoading', false)
           })
         }
       }
@@ -253,10 +256,11 @@ export default {
     })
     .catch(error => {
       console.log(error)
+      commit('setLoading', false)
     })
   },
   getUserSchedule ({commit}, idUser) {
-    console.log('Value', idUser)
+    commit('setLoading', true)
     axios.get('/schedule.json')
     .then(res => {
       const data = res.data
@@ -274,9 +278,11 @@ export default {
           .then(axios.spread((task, user) => {
             const newSchedule = {id: key, user: user.data, task: task.data}
             schedules.push(newSchedule)
+            commit('setLoading', false)
           }))
           .catch(error => {
             console.log(error)
+            commit('setLoading', false)
           })
         }
       }
@@ -284,6 +290,7 @@ export default {
     })
     .catch(error => {
       console.log(error)
+      commit('setLoading', false)
     })
   },
   getScheduleIds ({commit}) {

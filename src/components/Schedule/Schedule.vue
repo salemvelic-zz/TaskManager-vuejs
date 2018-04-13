@@ -1,5 +1,16 @@
 <template>
   <v-container>  
+    <v-layout>
+      <v-flex xs12 clas="text-xs-center">
+        <v-progress-circular 
+          indeterminate 
+          color="primary"
+          :width="7"
+          :size="70"
+          v-if="loading">
+        </v-progress-circular>
+      </v-flex>
+    </v-layout>
      <v-layout row wrap>
        <v-flex xs12 sm10 offset-sm1 v-for="(sch, index) in schedules" :key="sch.id">
          <v-card class="elevation-10 mb-4">
@@ -94,6 +105,9 @@ export default {
     },
     schedules () {
       return this.$store.getters.schedules
+    },
+    loading () {
+      return this.$store.getters.loading
     }
   },
   created () {
