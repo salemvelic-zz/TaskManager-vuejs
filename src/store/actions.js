@@ -14,7 +14,6 @@ export default {
           user.id = key
           commit('authUser', user.role)
           commit('storeUser', user)
-          console.log(user.role)
         }
       }
     })
@@ -136,7 +135,6 @@ export default {
           const task = {id: key, label: data[key].title}
           tasks.push(task)
         }
-        // console.log(tasks)
         commit('storeTasksNames', tasks)
       })
       .catch(error => {
@@ -206,7 +204,6 @@ export default {
   },
   editSchedule ({commit}, authData) {
     commit('setLoading', true)
-    console.log(authData.id)
     axios.put('/schedule/' + authData.id + '.json', {
       user: authData.user,
       task: authData.task
@@ -251,7 +248,6 @@ export default {
           })
         }
       }
-      console.log(schedules)
       commit('storeSchedules', schedules)
     })
     .catch(error => {
@@ -305,18 +301,6 @@ export default {
       }
       commit('storeAllSchedules', scheduleIds)
     })
-    .catch(error => {
-      console.log(error)
-    })
-  },
-  changeStatus ({commit}, changeStat) {
-    console.log('try to change', changeStat.status)
-    const task = this.store.getters.getSpecificTask(changeStat.task)
-    console.log('Task', task)
-    axios.put('/task/' + changeStat.task + '/.json', {
-      status: changeStat.status
-    })
-    .then(res => console.log(res))
     .catch(error => {
       console.log(error)
     })

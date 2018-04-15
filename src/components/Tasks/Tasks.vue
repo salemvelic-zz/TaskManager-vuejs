@@ -51,11 +51,11 @@
                   <p class="mb-0 text-xs-center title">{{task.location}}</p>
                 </v-card-text>      
               </v-flex>    
-              <v-flex class="mb-3">
+              <v-flex sm6 class="mb-3">
                 <gmap-map
                     :center="{lat: parseFloat(task.ltd), lng: parseFloat(task.lng)}" 
                     :zoom="7"
-                    style="width: 400px; height: 200px; margin-left:auto; margin-right:auto;"
+                    style="height: 200px; margin-left:auto; margin-right:auto;"
                     >
                   <gmap-marker
                     :key="index"
