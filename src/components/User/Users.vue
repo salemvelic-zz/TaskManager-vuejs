@@ -35,12 +35,15 @@
                  </v-card-title>
                 </v-flex>
                 <v-layout row wrap>
-                  <v-flex md4 offset-md8 class="mt-1">
+                  <v-flex md4 offset-md8>
                   <v-card-actions>
-                   <app-edit-user :user="user"></app-edit-user> 
-                   <v-btn class="primary" @click="deleteUser(user.id, index)">
-                     <v-icon>delete</v-icon> Delete   
-                   </v-btn>
+                    <app-edit-user :user="user"></app-edit-user> 
+                    <v-btn 
+                      small 
+                      class="primary" 
+                      @click="deleteUser(user.id, index)">
+                       <v-icon small>delete</v-icon>Delete   
+                    </v-btn>
                  </v-card-actions>
                  </v-flex> 
                 </v-layout>                                              

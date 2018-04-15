@@ -1,8 +1,10 @@
 <template>
   <v-dialog v-model="dialog" persistent scrollable  max-width="600px">
-    <v-btn class="primary" 
+    <v-btn 
+      small
+      class="primary" 
       slot="activator">
-       <v-icon>edit</v-icon> Edit
+       <v-icon small>edit</v-icon> Edit
     </v-btn>
     <v-card>
       <v-toolbar dark class="primary">
