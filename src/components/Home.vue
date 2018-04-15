@@ -27,14 +27,12 @@
 
 <script>
   export default {
-    data () {
-      return {
-        name: this.$store.getters.user.fullName
-      }
-    },
     computed: {
       showHome () {
         return this.$store.getters.isAuthenticated
+      },
+      name () {
+        return this.$store.getters.user.fullName
       }
     }
   }

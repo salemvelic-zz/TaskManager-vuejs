@@ -1,6 +1,17 @@
 <template>
   <v-container fill-height>
-    <v-layout row wrap justify-space-between>
+      <v-layout>
+        <v-flex xs12 class="text-xs-center">
+          <v-progress-circular 
+            indeterminate 
+            color="primary"
+            :width="7"
+            :size="70"
+            v-if="loading">
+          </v-progress-circular>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap justify-space-between v-if="!loading">
       <v-flex xs12 sm10 md5 v-for="(task, index) in listTasks" :key="task.id">
         <v-card class="mb-5 elevation-20">
           <v-toolbar dark class="primary">
@@ -94,6 +105,9 @@
     computed: {
       listTasks () {
         return this.$store.getters.tasks
+      },
+      loading () {
+        return this.$store.getters.loading
       }
     },
     created () {
